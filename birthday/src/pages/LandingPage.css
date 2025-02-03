@@ -1,0 +1,121 @@
+/* src/pages/LandingPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --primary-color: #E9CC2A; /* Primary color */
+  --second-color: #C085EE; /* Secondary color */
+  --title: "Dancing Script", serif; /* Corrected title font */
+  --message: "Caveat", serif;
+} 
+
+@keyframes drop {
+  0% {
+    transform: translateY(-100px); /* Start above the view */
+  }
+  100% {
+    transform: translateY(0); /* End at its original position */
+  }
+}
+
+.landing-page {
+  height: 100vh; /* Ensure the landing page takes the full height of the viewport */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.heart-drop {
+  position: absolute; /* Ensure it can be positioned based on click */
+  width: 10px; /* Size of the number */
+  height: 20px; /* Size of the number */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="purple"><text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="24" font-family="Arial, sans-serif">21</text></svg>') no-repeat center center;
+  background-size: contain;
+  pointer-events: none; /* Prevent interaction with number drops */
+  animation: drop 1s forwards, fadeOut 1s forwards 1s; /* Drop and fade out animation with delay */
+  transform: translateY(0); /* Ensure the number drops from its initial position */
+  top: 0; /* Ensure it starts from the top */
+}
+
+button {
+  all: unset;
+  font: 10px;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+.start-btn {
+  color: white;
+  padding: 5px 15px;
+  display: flex; /* Ensure it can be centered */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: absolute; /* Position it absolutely */
+  top: 50%; /* Move it to the center vertically */
+  left: 50%; /* Move it to the center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for its own size */
+  border: solid 1px aliceblue;
+  border-radius: 5px;
+}
+
+.close-btn {
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+}
+
+.start-btn:hover {
+  border-radius: 10px 10px;
+  transition: ease .5s;
+}
+
+.close-btn:hover {
+  background-color: #9c9a0c;
+}
+
+.envelope {
+  position: absolute;
+  top: 50;
+  left: 50;
+  transform: translate(Y);
+}
+
+.outer {
+  background-color: rgba(190, 31, 3, 0.589);
+  border-radius: 10px;
+  margin: 0 20px;
+  padding: 20px 0;
+}
+
+.inner {
+  margin: 0 20px;
+  padding: 20px 1px;
+  background-color: #E9CC2A;
+  border-radius: 10px;
+}
+
+.head {
+  color: #290286bd;
+  font-size: 50px;
+  font-family: var(--title);
+  margin-bottom: 0; /* Corrected to use the variable */
+}
+
+.date {
+  margin-top: 0;
+  color: #9915ffee;
+  font-size: 7px;
+}
+
+.message {
+  font-family: var(--message);
+  color: #3a00a7 ;
+  font-size: 20px;
+  text-align: justify;
+  padding: 0 30px;
+}
+
+.ingat {
+  font-family: var(--message);
+  color: #3a00a7 ;
+}
